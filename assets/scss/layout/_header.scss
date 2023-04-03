@@ -1,0 +1,35 @@
+.header{
+    .hd-introduction{
+        width: 100%;
+        height: 100vh;
+        .intro-top{
+            width: inherit;
+            height: 70%;
+            background: #fff;
+            display: flex;
+            .intro-name{
+                position: relative;
+                width: 60%;
+                h1{
+                    position: absolute;
+                    bottom: 100px;
+                    right: 250px;
+                    font-size: 3vw;
+                    line-height: 70px;
+                }
+            }
+            .intro-img{
+                width: 40%;
+                padding-top: 100px;
+                .img-box{
+                    width: 30vw;
+                }
+            }
+        }
+        .intro-bottom{
+            width: inherit;
+            height: 30%;
+            background: #ffaba8;
+        }
+    }
+}
