@@ -1,12 +1,11 @@
 .containar{
-    max-width: 1150px;
-    margin: 0 auto;
     [class*="sc-"]{
         .group-title{
             display: flex;
             margin: 100px 0;
             font-size: 50px;
         }
+        
     }
     .sc-list{
         width: 100%;
@@ -18,17 +17,20 @@
                 position: relative;
                 width: 100%;
                 height: 100%;
+                perspective: 140px;
                 .postit-item{
                     &.show .card-area {
-                        transform: rotateY(180deg);
+                        // transform: rotateY(180deg);
                     }
                     position: absolute;
                     .card-area{
                         position: relative;
                         width: 100%;
                         height: 100%;
-                        transition: .4s;
+                        transition: .6s;
                         transform-style: preserve-3d;
+                        border-radius: 3px;
+                        overflow: hidden;
                         .front-card,.back-card{
                             position: absolute;
                             width: 100%; 
@@ -81,6 +83,45 @@
                             background: #563499;
                         }
                     }
+                }
+            }
+        }
+    }
+    .sc-project{
+        overflow: hidden;
+        .group-project{
+            .technique-area{
+                margin-left: -150px;
+                transform: translateZ(0) rotateY(25deg) rotate(-5deg);
+                .technique-list{
+                    animation:  slideLeft 20s linear infinite;
+                    margin-bottom: 4rem;
+                    display: flex;
+                    .technique-item{
+                        font-size: 30px;
+                        padding: 30px;
+                        &:nth-child(5n+1){
+                            background: #00a541;
+                        }
+                        &:nth-child(5n+2){
+                            background: #ffd150;
+                        }
+                        &:nth-child(5n+3){
+                            background: #ffaba8;
+                        }
+                        &:nth-child(5n+4){
+                            background: #2c7677;
+                        }
+                        &:nth-child(5n+5){
+                            background: #ff6550;
+                        }
+                    }
+                }
+            }
+            .slide-area{
+                margin-top: 300px;
+                .pro{
+                    overflow: initial
                 }
             }
         }
