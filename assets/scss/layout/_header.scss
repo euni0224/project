@@ -1,4 +1,46 @@
 .header{
+    .hd-intro{
+        width: 100%;
+        .hd-bg{
+            width: 100%;
+            height: 100vh;
+            background: #fff;
+        }
+        .intro-list{
+            position: relative;
+            width: 100%;
+            .intro-item{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                &:nth-child(1){
+                    background: #ffaba8;
+                }
+                &:nth-child(2){
+                    background: #ffd150;
+                }
+                &:nth-child(3){
+                    background: #009ca8;
+                    font-size: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .text-box{
+                        overflow: hidden;
+                        gap: 30px;
+                        display: flex;
+                        span{
+                            display: block;
+                            transform: translateY(120%);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
     .hd-introduction{
         width: 100%;
         height: 100vh;
