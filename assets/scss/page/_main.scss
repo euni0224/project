@@ -121,7 +121,11 @@
             .slide-area{
                 margin-top: 300px;
                 .pro{
-                    overflow: initial
+                    overflow: initial;
+                    .img-wrap{
+                        height: 500px;
+                        margin-bottom: 20px;
+                    }
                 }
             }
         }

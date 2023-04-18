@@ -294,3 +294,7 @@ body {
 .containar .sc-project .group-project .slide-area .pro {
   overflow: initial;
 }
+.containar .sc-project .group-project .slide-area .pro .img-wrap {
+  height: 500px;
+  margin-bottom: 20px;
+}
