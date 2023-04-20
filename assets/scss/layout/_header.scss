@@ -1,5 +1,8 @@
 .header{
+    position: relative;
     .hd-intro{
+        position: relative;
+        z-index: 5;
         width: 100%;
         .hd-bg{
             width: 100%;
@@ -42,6 +45,10 @@
         }
     }
     .hd-introduction{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100vh;
         .intro-top{
@@ -69,8 +76,10 @@
             }
         }
         .intro-bottom{
+            transform: translateY(100%);
             width: inherit;
             height: 30%;
+            
             background: #ffaba8;
         }
     }
