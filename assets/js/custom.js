@@ -24,16 +24,63 @@ $(function () {
     .to('.hd-intro .hd-bg', {delay: 1.3, yPercent: -100 },'a')
     .to('.hd-intro', {delay: 1.3, yPercent: -100 },'a')
     .to('.intro-bottom', {delay: 1., yPercent: -100 },'a')
-    .to('body',{})
+    .to('body',{'overflow': 'auto'})
     
 
     // 프로젝트 슬라이드
-    var swiper2 = new Swiper(".pro", {
-        slidesPerView: 1.2,
-        spaceBetween:30,
-        navigation: {
-            nextEl: ".next",
-            prevEl: ".prev",
-            },
-    });
+
+
+    //
+		setupAnimations();
+
+	function setupAnimations() {
+
+		gsap.from(".stroke__wide", {
+			drawSVG: "0%",
+			delay: 1,
+			scrollTrigger: {
+				trigger: "main",
+				start: "-10% top",
+				end: "bottom+=30% bottom",
+				scrub: 1
+			}
+		});
+
+		gsap.from(".stroke__mask", {
+			drawSVG: "0%",
+			scrollTrigger: {
+				trigger: "#page",
+				start: "-7% top",
+				end: "bottom+=20% bottom",
+				scrub: 1
+			}
+		});
+
+		gsap.from(".stroke__narrow", {
+			"--dashOffset": 2000,
+			scrollTrigger: {
+				trigger: "main",
+				start: "-10% top",
+				end: "bottom+=30% bottom",
+				scrub: 2
+			}
+		});
+
+		gsap.set(".stroke__blob", {transformOrigin: "50% 100%"});
+		gsap.from(".stroke__blob", {
+			scale: 0.85,
+			y: 3000,
+			x: -500,
+			rotate: 10,
+			delay: 1,
+			scrollTrigger: {
+				trigger: "main",
+				start: "center top",
+				end: "bottom top",
+				toggleActions: "restart pause resume reset",
+				scrub: 1
+			}
+		});
+
+	}
 })
