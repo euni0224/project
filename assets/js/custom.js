@@ -27,7 +27,61 @@ $(function () {
     .to('body',{'overflow': 'auto'})
     
 
-    // 프로젝트 슬라이드
+    //프로젝트 호버시 링크 카드 보이기
+    $('.slide-item').hover(function(){
+        $(this).toggleClass('active')
+    })
 
+    // 필터
+    $('.slide-item').addClass('on');
+    $('button').click(function(e){
+        e.preventDefault();
+        const buttonDate = $(this).data('filter')
+        const $btn =$(this);
+        const $slideItems = $('.slide-item');
+        $btn.addClass('on').siblings().removeClass('on');
+        if (buttonDate === 'all') {
+            $slideItems.addClass('on');
+        } else {
+            $slideItems.removeClass('on');
+            $slideItems.each(function(i,slideItem){
+                if(slideItem?.dataset?.filter?.split(',')?.map(filter => filter?.trim())?.includes(buttonDate)){
+                    slideItem.classList.add('on');
+                }
+            })
+        }
+    })
+
+
+    //프로젝트 스크롤 효과
+    gsap.to('.hd-introduction',{
+        scrollTrigger:{
+            trigger:'.hd-introduction',
+            start:'0% 0%',
+            end:'100% 0%',
+            scrub:0,
+        },
+        ease:'none',
+        yPercent:100
+    })
+
+
+    // 마우스
+    $(window).mousemove(function(e){
+        e.preventDefault();
+        gsap.to('.cursor',{
+            x:e.clientX,
+            y:e.clientY,
+            duration:.2,
+        })
+    })
+
+    $('[data-hover]').hover(function(){
+        $('.cursor').addClass('cursor-over')
+
+    },function(){
+        $('.cursor').removeClass('cursor-over')
+
+    })
 
 })

@@ -1,9 +1,21 @@
 
+$mobilemin: 400px; //401
 $mobile: 767px; //320
 $tablet: 1023px; // 768
 $desktop: 1200px; //1024
+$desktopplus: 1650px; //1201
 
 /*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin mobilemin{
+  @media (max-width: $mobile){
+    @content;
+  }
+}
+@mixin mobile{
+  @media (max-width: $mobile){
+    @content;
+  }
+}
 @mixin mobile{
   @media (max-width: $mobile){
     @content;
@@ -20,6 +32,11 @@ $desktop: 1200px; //1024
 /*반응형, 브라우저 크기가 1024px 이상일때*/
 @mixin desktop{
   @media (max-width: $desktop){
+    @content;
+  }
+}
+@mixin desktopplus{
+  @media (max-width: $desktopplus){
     @content;
   }
 }
