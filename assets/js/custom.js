@@ -1,7 +1,8 @@
 $(function () {
     history.scrollRestoration = "manual"
     //인트로
-    gsap.set('body', { overflow: 'hidden'})
+    gsap.set('body', { overflow: 'hidden',})
+    gsap.set('.cursor', { visibility: 'hidden',})
     intro = gsap.timeline({
         defaults: {
             duration: 0.6,
@@ -25,6 +26,7 @@ $(function () {
     .to('.hd-intro', {delay: 1.3, yPercent: -100 },'a')
     .to('.intro-bottom', {delay: 1., yPercent: -100 },'a')
     .to('body',{'overflow': 'auto'})
+    .to('.cursor',{'visibility': 'visible'})
     
 
     //프로젝트 호버시 링크 카드 보이기
