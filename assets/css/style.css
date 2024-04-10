@@ -207,7 +207,7 @@ body {
 }
 .header .hd-introduction .group-intro {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background: #ffaba8;
 }
